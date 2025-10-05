@@ -1,16 +1,20 @@
 {
   "name": "ga2-7f2399",
+  // Use a minimal base image
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    // Install Python using a dev container feature
     "ghcr.io/devcontainers/features/python:1": {}
   },
   "customizations": {
     "vscode": {
+      // Set of extensions to install inside the container.
       "extensions": [
-        "astral-sh.uv",
-        "ms-python.python"
+        "ms-python.python",
+        "astral-sh.uv"
       ]
     }
   },
+  // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "uv pip install fastapi"
 }
